@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiment 4 - Advanced CSS3</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#ececec;
+}
+
+/* Header */
+
+header{
+    height:220px;
+    background:url("mm.jpg") center/cover;
+    position:relative;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    border-radius:20px;
+    position:absolute;
+    top:20px;
+    left:20px;
+    border:4px solid white;
+}
+
+/* Navigation */
+
+nav{
+    background:#666;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    flex:1;
+}
+
+nav ul li a{
+    display:block;
+    text-align:center;
+    padding:15px;
+    color:white;
+    text-decoration:none;
+}
+
+nav ul li a:hover{
+    background:red;
+}
+
+/* Multiple Background */
+
+.section1{
+    padding:30px;
+    background:
+    url("sa.jpg") right bottom no-repeat,
+    url("ma.jpg") left top no-repeat,
+    rgb(241, 112, 6);
+}
+
+/* Table */
+
+table{
+    margin:auto;
+    border-collapse:collapse;
+    width:300px;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+th{
+    background:rgb(223, 223, 16);
+    color:white;
+    padding:10px;
+}
+
+td{
+    text-align:center;
+    padding:10px;
+}
+
+tr:nth-child(odd){
+    background:#baff70;
+}
+
+tr:nth-child(even){
+    background:green;
+    color:white;
+}
+
+tr:hover{
+    background:orange;
+}
+
+/* Forms */
+
+.forms{
+    background:url("https://picsum.photos/1200/500?blur=2") center/cover;
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    padding:50px;
+}
+
+.form-box{
+    background:white;
+    width:300px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(0,0,0,.4);
+}
+
+.form-box h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:2px solid #ccc;
+    border-radius:8px;
+}
+
+/* Pseudo Classes */
+
+input:focus{
+    border:3px solid red;
+    background:#c6c8c6;
+}
+
+input:required{
+    border:2px solid blue;
+}
+
+input[type=email]:invalid{
+    color:red;
+}
+
+input[type=email]:valid{
+    color:blue;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#0066ff;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0044aa;
+}
+
+/* Footer */
+
+footer{
+    background:#ffe6bf;
+    text-align:center;
+    padding:20px;
+    font-weight:bold;
+}
+
+/* Rounded Corner Example */
+
+.round-box{
+    width:250px;
+    margin:30px auto;
+    padding:20px;
+    background:#4CAF50;
+    color:white;
+    text-align:center;
+    border-radius:25px;
+}
+
+/* Border Image Example */
+
+.border-box{
+    width:300px;
+    margin:30px auto;
+    padding:20px;
+    border:20px solid transparent;
+    border-image:url(dr.jpg) 30 round;
+    text-align:center;
+}
+
+/* Background Size Example */
+
+.bg-size{
+    width:300px;
+    height:180px;
+    margin:30px auto;
+    background:url("https://picsum.photos/400") no-repeat;
+    background-size:cover;
+    border-radius:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="ff.png" class="logo">
+</header>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Model</a></li>
+<li><a href="#">Others</a></li>
+</ul>
+</nav>
+
+<section class="section1">
+
+<div class="round-box">
+Rounded Corners Example
+</div>
+
+<div class="border-box">
+Border Image Example
+</div>
+
+<div class="bg-size"></div>
+
+<br>
+
+<table>
+
+<tr>
+<th colspan="2">Favourite Fruits</th>
+</tr>
+
+<tr>
+<td>Apple</td>
+<td>🍎</td>
+</tr>
+
+<tr>
+<td>Orange</td>
+<td>🍊</td>
+</tr>
+
+<tr>
+<td>Banana</td>
+<td>🍌</td>
+</tr>
+
+<tr>
+<td>Grapes</td>
+<td>🍇</td>
+</tr>
+
+</table>
+
+</section>
+
+<section class="forms">
+
+<div class="form-box">
+
+<h2>Sign In</h2>
+
+<input type="text" placeholder="Username" required>
+
+<input type="password" placeholder="Password" required>
+
+<button>Sign In</button>
+
+</div>
+
+<div class="form-box">
+
+<h2>Sign Up</h2>
+
+<input type="text" placeholder="Name" required>
+
+<input type="email" placeholder="Email" required>
+
+<input type="password" placeholder="Password" required>
+
+<button>Sign Up</button>
+
+</div>
+
+</section>
+
+<footer>
+
+Your Address<br>
+
+© 2026 - Web Technology Lab - All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
