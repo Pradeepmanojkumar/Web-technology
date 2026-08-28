@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday Cake Order Form - URK24CS1150</title>
+</head>
+<body>
+    <h2>Birthday Cake Order Form - URK24CS1150</h2>   
+    <label>Number of 1/2kg Cakes:</label><br>
+    <input type="text" id="small"><br><br>   
+    <label>Number of 1kg Cakes:</label><br>
+    <input type="text" id="medium"><br><br> 
+    <label>Number of 2kg Cakes:</label><br>
+    <input type="text" id="large"><br><br>  
+    <p>Tip:</p>
+    <input type="radio" name="tip" value="10"> 10%<br>
+    <input type="radio" name="tip" value="15" checked> 15%<br>
+    <input type="radio" name="tip" value="20"> 20%<br><br>    
+    <button id="submit">Calculate Order</button>   
+    <p>Cost of order: Rs. <span id="price">0.00</span></p>
+    <script>
+        document.getElementById("submit").addEventListener("click", calculate);
+        function calculate() {
+            let small = parseInt(document.getElementById("small").value) || 0;
+            let medium = parseInt(document.getElementById("medium").value) || 0;
+            let large = parseInt(document.getElementById("large").value) || 0;
+            
+            let tipElement = document.querySelector('input[name="tip"]:checked');
+            let tip = tipElement ? parseInt(tipElement.value) : 0;
+            
+            let cost = (small * 100) + (medium * 200) + (large * 400);
+            let tax = cost * 0.09;
+            let total = cost + tax;
+            
+            total = total + (total * tip / 100);
+            
+            document.getElementById("price").innerHTML = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
