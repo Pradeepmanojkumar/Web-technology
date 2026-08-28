@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details - URK24CS1150</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+        .student {
+            margin: 15px auto;
+            padding: 10px;
+            width: 400px;
+            border: 10px solid rgb(21, 9, 251);
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Details - URK24CS1150</h1>
+    <div id="students"></div>
+
+    <script>
+        var students = [
+            {
+                name: "Arun",
+                regno: "URK21CS1203",
+                dob: 1998
+            },
+            {
+                name: "Sam",
+                regno: "URK24CS1344",
+                dob: 2001
+            },
+            {
+                name: "Issac",
+                regno: "URK23CS1541",
+                dob: 1997
+            }
+        ];
+
+        var container = document.getElementById("students");
+        students.forEach(function(student) {
+            var studentDiv = document.createElement("div");
+            studentDiv.className = "student";
+            
+            studentDiv.innerHTML = `
+                <h3>Name: ${student.name}</h3>
+                <p>Register No: ${student.regno}</p>
+                <p>DOB: ${student.dob}</p>
+            `;
+            
+            container.appendChild(studentDiv);
+        });
+    </script>
+</body>
+</html>

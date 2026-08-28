@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Move Car - URK24CS1150</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+        #car {
+            position: relative;
+            width: 150px;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Move the Car - URK24CS1150</h1>
+    <button onclick="moveCar()">Move</button>
+    <button onclick="stopCar()">Stop</button>
+    <br>
+    <img id="car" src="car.avif" alt="Car">
+
+    <script>
+        var position = 0;
+        var timer;
+
+        function moveCar() {
+            clearInterval(timer); 
+            
+            timer = setInterval(function() {
+                position += 2;
+                document.getElementById("car").style.left = position + "px";
+            }, 20);
+        }
+
+        function stopCar() {
+            clearInterval(timer);
+        }
+    </script>
+</body>
+</html>
